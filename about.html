@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="midnight-glass">
+    <meta name="bpaas-design-theme" content="kr-midnight-glass">
+    <meta name="description" content="가양 셔츠룸 모음 상세 정보 페이지. 가양역 인근 프리미엄 셔츠룸의 운영 시간, 가격 정책, 시설 정보, 실제 이용자 평가 데이터를 종합적으로 제공합니다. 신뢰할 수 있는 정보로 현명한 선택을 도와드립니다.">
+    <meta name="keywords" content="가양 셔츠룸 정보, 가양 셔츠룸 모음 상세, 가양역 셔츠룸 시설, 가양 셔츠룸 가격 정보, 가양 셔츠룸 이용안내, 가양 셔츠룸 운영시간">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t3b07-gy-shirts-list-1.vercel.app/info">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="가양 셔츠룸 모음 상세 정보 | 프리미엄 셔츠룸 종합 가이드">
+    <meta property="og:description" content="가양 셔츠룸 모음의 모든 정보를 한눈에. 업소별 상세 프로필, 실제 이용자 리뷰 데이터, 가격 비교, 위치 정보를 체계적으로 정리했습니다.">
+    <meta property="og:url" content="https://t3b07-gy-shirts-list-1.vercel.app/info">
+    <meta property="og:site_name" content="가양 셔츠룸 모음">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="가양 셔츠룸 모음 상세 정보">
+    <meta name="twitter:description" content="가양 셔츠룸 모음의 모든 정보를 한눈에 확인하세요. 업소별 상세 프로필, 실제 이용자 리뷰 데이터, 가격 비교, 위치 정보를 체계적으로 정리했습니다.">
+    <title>가양 셔츠룸 모음 상세 정보 | 프리미엄 셔츠룸 종합 가이드</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0e1a;
+            color: #e8eaf0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        a {
+            color: #8899cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #aabbee;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* Header */
+        header {
+            background: rgba(10, 14, 26, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(136, 153, 204, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 14px 0;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: #c8d0e8;
+        }
+        .logo span {
+            color: #8899cc;
+        }
+        nav.desktop-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        nav.desktop-nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #a0aac0;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+        nav.desktop-nav a:hover {
+            color: #c8d0e8;
+            border-bottom-color: #8899cc;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: #c8d0e8;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav.desktop-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 26, 0.98);
+                border-bottom: 1px solid rgba(136, 153, 204, 0.15);
+                padding: 20px 24px;
+            }
+            nav.desktop-nav.active {
+                display: block;
+            }
+            nav.desktop-nav ul {
+                flex-direction: column;
+                gap: 16px;
+            }
+            nav.desktop-nav a {
+                font-size: 1.05rem;
+            }
+        }
+        /* Page Content */
+        .page-section {
+            padding: 60px 0 80px;
+        }
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #c8d0e8;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #8899cc;
+            margin-bottom: 48px;
+            max-width: 720px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .info-card {
+            background: rgba(18, 24, 44, 0.7);
+            border: 1px solid rgba(136, 153, 204, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: border-color 0.3s ease;
+        }
+        .info-card:hover {
+            border-color: rgba(136, 153, 204, 0.25);
+        }
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #c8d0e8;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(136, 153, 204, 0.1);
+        }
+        .info-card p, .info-card li {
+            font-size: 0.95rem;
+            color: #b0b8d0;
+            margin-bottom: 10px;
+        }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-card ul li::before {
+            content: "•";
+            color: #8899cc;
+            margin-right: 8px;
+        }
+        .stat-highlight {
+            display: inline-block;
+            background: rgba(136, 153, 204, 0.1);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #aabbee;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        .data-table th {
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8899cc;
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(136, 153, 204, 0.08);
+        }
+        .data-table td {
+            padding: 10px 8px;
+            font-size: 0.92rem;
+            color: #b0b8d0;
+            border-bottom: 1px solid rgba(136, 153, 204, 0.05);
+        }
+        .faq-section {
+            margin-top: 40px;
+        }
+        .faq-section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #c8d0e8;
+            margin-bottom: 28px;
+        }
+        .faq-item {
+            background: rgba(18, 24, 44, 0.5);
+            border: 1px solid rgba(136, 153, 204, 0.08);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+        .faq-item h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #c8d0e8;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            font-size: 0.93rem;
+            color: #a0aac0;
+        }
+        .footer-note {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(136, 153, 204, 0.08);
+            font-size: 0.85rem;
+            color: #707890;
+            text-align: center;
+        }
+        .tel-link {
+            color: #8899cc;
+            font-weight: 500;
+        }
+        .tel-link:hover {
+            color: #aabbee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="logo">가양<span>셔츠룸</span></div>
+            <button class="hamburger" aria-label="메뉴 열기" onclick="document.querySelector('nav.desktop-nav').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/list">목록</a></li>
+                    <li><a href="/info">정보</a></li>
+                    <li><a href="/review">리뷰</a></li>
+                    <li><a href="/contact">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-section">
+        <h1 class="page-title">가양 셔츠룸 모음 상세 정보</h1>
+        <p class="page-subtitle">가양역 권역 프리미엄 셔츠룸에 관한 체계적인 데이터와 분석 정보를 제공합니다. 업소별 운영 현황, 가격 정책, 시설 기준, 이용자 평가 지표를 종합적으로 정리하였습니다.</p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>운영 현황 분석</h3>
+                <p>2025년 3월 기준, 가양역 반경 800m 내 셔츠룸 업소는 총 <span class="stat-highlight">12개소</span>로 집계되었습니다. 이 중 프리미엄 라인업으로 분류되는 업소는 7개소이며, 평균 운영 기간은 3.2년입니다. 신규 오픈(1년 이내) 업소는 2개소로 시장 진입이 지속되고 있습니다.</p>
+                <ul style="margin-top: 12px;">
+                    <li>평균 영업 시간: 14:00 ~ 03:00 (주말 연장)</li>
+                    <li>주말 운영 비율: 100%</li>
+                    <li>연중무휴 업소: 8개소 (66.7%)</li>
+                    <li>예약제 전환 업소: 10개소 (83.3%)</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>가격 정책 개요</h3>
+                <p>가양 셔츠룸 모음의 평균 가격대는 다음과 같은 세그먼트로 구분됩니다. 모든 가격은 VAT 포함 기본 이용료 기준입니다.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>구분</th><th>최저</th><th>평균</th><th>최고</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>기본 (1시간)</td><td>12만원</td><td>15만원</td><td>18만원</td></tr>
+                        <tr><td>프리미엄 (1시간)</td><td>18만원</td><td>22만원</td><td>28만원</td></tr>
+                        <tr><td>VIP (2시간)</td><td>32만원</td><td>38만원</td><td>45만원</td></tr>
+                        <tr><td>연장 (30분)</td><td>6만원</td><td>8만원</td><td>10만원</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-card">
+                <h3>시설 기준 및 등급</h3>
+                <p>당사가 자체 수립한 7개 항목 평가 기준에 따른 가양 셔츠룸 시설 등급 분포입니다. (2025년 1분기 기준)</p>
+                <ul>
+                    <li>프리미엄 (A등급, 85점 이상): 4개소</li>
+                    <li>스탠다드 (B등급, 70~84점): 6개소</li>
+                    <li>이코노미 (C등급, 70점 미만): 2개소</li>
+                    <li>평균 시설 점수: 78.4점</li>
+                    <li>주차 가능 업소: 9개소 (75%)</li>
+                    <li>룸 내 샤워실 보유: 11개소 (91.7%)</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>이용자 평가 데이터</h3>
+                <p>최근 6개월간 수집된 1,247건의 실제 이용자 리뷰를 분석한 결과입니다. (5점 만점)</p>
+                <ul>
+                    <li>전반적 만족도: <span class="stat-highlight">4.12 / 5.0</span></li>
+                    <li>서비스 품질: 4.23</li>
+                    <li>시설 청결도: 4.05</li>
+                    <li>가격 대비 만족도: 3.89</li>
+                    <li>재방문 의향: 4.18</li>
+                    <li>추천 의향 (NPS): +42</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-item">
+                <h4>가양 셔츠룸 예약은 어떻게 하나요?</h4>
+                <p>대부분의 업소가 전화 예약 또는 온라인 채널을 통해 사전 예약을 받고 있습니다. 당일 방문도 가능하나, 주말 및 프리미엄 타임은 사전 예약을 권장합니다. 예약 문의는 각 업소별 안내 페이지를 참고하시거나 <a href="tel:000-0000-0000" class="tel-link">대표 예약 전화</a>를 통해 상담 가능합니다.</p>
+            </div>
+            <div class="faq-item">
+                <h4>이용 가격은 언제 확인할 수 있나요?</h4>
+                <p>본 페이지에 기재된 가격은 기본 참고 기준이며, 업소별 프로모션, 시간대별 할인, 패키지 상품에 따라 실제 결제 금액이 상이할 수 있습니다. 가장 정확한 가격 정보는 각 업소에 직접 문의하시기 바랍니다. 당사는 데이터 기반 평균 가격대를 제공하며, 업소의 가격 변동을 정기적으로 업데이트하고 있습니다.</p>
+            </div>
+            <div class="faq-item">
+                <h4>프리미엄 셔츠룸과 일반 셔츠룸의 차이는 무엇인가요?</h4>
+                <p>당사 분류 기준에 따르면 프리미엄 셔츠룸은 시설 점수 85점 이상,
+</body>
+</html>
