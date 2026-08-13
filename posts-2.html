@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b07-gy-shirts-list-1</title>
+  <meta name="description" content="t3b07-gy-shirts-list-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gayang-shirt-review.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ html { font-size: 16px; scroll-behavior: smooth; }
+ body { 
+ font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
+ background-color: #0d1117; 
+ color: #f0f4f8; 
+ line-height: 1.8; 
+ letter-spacing: 0.02em;
+ }
+ a { color: #635bff; text-decoration: none; }
+ a:hover { text-decoration: underline; }
+ img { max-width: 100%; height: auto; display: block; }
+
+ .container { 
+ max-width: 720px; 
+ margin: 0 auto; 
+ padding: 0 48px; 
+ }
+
+ /* Header */
+ header {
+ padding: 32px 0;
+ border-bottom: 1px solid rgba(99, 91, 255, 0.15);
+ position: relative;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo {
+ font-size: 1.4rem;
+ font-weight: 700;
+ letter-spacing: 0.15em;
+ color: #f0f4f8;
+ text-transform: uppercase;
+ }
+ .logo span { color: #635bff; }
+
+ nav.desktop-nav ul {
+ list-style: none;
+ display: flex;
+ gap: 32px;
+ }
+ nav.desktop-nav a {
+ font-size: 0.9rem;
+ letter-spacing: 0.08em;
+ color: #f0f4f8;
+ transition: color 0.2s;
+ }
+ nav.desktop-nav a:hover { color: #635bff; }
+
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
+ }
+ .hamburger span {
+ display: block;
+ width: 28px;
+ height: 1.5px;
+ background: #f0f4f8;
+ margin: 5px 0;
+ transition: 0.3s;
+ }
+
+ .mobile-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: #0d1117;
+ border-bottom: 1px solid rgba(99, 91, 255, 0.15);
+ padding: 24px 48px;
+ z-index: 100;
+ }
+ .mobile-menu.open { display: block; }
+ .mobile-menu ul { list-style: none; }
+ .mobile-menu li { margin-bottom: 16px; }
+ .mobile-menu a {
+ font-size: 1rem;
+ letter-spacing: 0.08em;
+ color: #f0f4f8;
+ }
+
+ /* Hero */
+ .hero {
+ padding: 120px 0 80px;
+ position: relative;
+ text-align: center;
+ background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 40%, #0d1117 100%);
+ border-bottom: 1px solid rgba(99, 91, 255, 0.1);
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: linear-gradient(180deg, rgba(99,91,255,0.08) 0%, transparent 50%, rgba(99,91,255,0.04) 100%);
+ pointer-events: none;
+ }
+ .hero .container { position: relative; }
+ .hero h1 {
+ font-size: 3.2rem;
+ font-weight: 700;
+ letter-spacing: 0.12em;
+ line-height: 1.2;
+ margin-bottom: 24px;
+ }
+ .hero h1 em {
+ font-style: normal;
+ color: #635bff;
+ }
+ .hero p {
+ font-size: 1.1rem;
+ letter-spacing: 0.06em;
+ color: rgba(240, 244, 248, 0.7);
+ max-width: 600px;
+ margin: 0 auto 32px;
+ }
+ .hero .cta {
+ display: inline-block;
+ padding: 16px 48px;
+ background: transparent;
+ border: 1.5px solid #635bff;
+ color: #f0f4f8;
+ font-family: 'Georgia', serif;
+ font-size: 1rem;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ transition: all 0.3s;
+ }
+ .hero .cta:hover {
+ background: #635bff;
+ color: #0d1117;
+ text-decoration: none;
+ }
+
+ /* Section common */
+ section { padding: 80px 0; }
+ .section-title {
+ font-size: 1.8rem;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ margin-bottom: 48px;
+ position: relative;
+ padding-bottom: 16px;
+ }
+ .section-title::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 60px;
+ height: 2px;
+ background: #635bff;
+ }
+
+ /* Intro */
+ .intro p {
+ font-size: 1.05rem;
+ letter-spacing: 0.04em;
+ margin-bottom: 24px;
+ color: rgba(240, 244, 248, 0.85);
+ }
+ .intro p:first-of-type::first-letter {
+ font-size: 3.2rem;
+ font-weight: 700;
+ color: #635bff;
+ float: left;
+ padding-right: 12px;
+ line-height: 0.9;
+ }
+ .intro .stat-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 32px;
+ margin-top: 48px;
+ border-top: 1px solid rgba(99, 91, 255, 0.1);
+ padding-top: 48px;
+ }
+ .stat-item {
+ text-align: center;
+ }
+ .stat-item .number {
+ font-size: 2.4rem;
+ font-weight: 700;
+ color: #635bff;
+ letter-spacing: 0.05em;
+ }
+ .stat-item .label {
+ font-size: 0.85rem;
+ letter-spacing: 0.08em;
+ color: rgba(240, 244, 248, 0.6);
+ margin-top: 8px;
+ }
+
+ /* Features */
+ .features { border-top: 1px solid rgba(99, 91, 255, 0.1); }
+ .feature-list {
+ display: grid;
+ gap: 40px;
+ }
+ .feature-item {
+ padding: 32px 0;
+ border-bottom: 1px solid rgba(99, 91, 255, 0.06);
+ }
+ .feature-item:last-child { border-bottom: none; }
+ .feature-item h3 {
+ font-size: 1.2rem;
+ letter-spacing: 0.08em;
+ margin-bottom: 12px;
+ color: #f0f4f8;
+ }
+ .feature-item h3 .num {
+ color: #635bff;
+ margin-right: 12px;
+ font-weight: 700;
+ }
+ .feature-item p {
+ color: rgba(240, 244, 248, 0.75);
+ font-size: 0.95rem;
+ letter-spacing: 0.04em;
+ }
+
+ /* Reviews */
+ .reviews { border-top: 1px solid rgba(99, 91, 255, 0.1); }
+ .review-grid {
+ display: grid;
+ gap: 32px;
+ }
+ .review-card {
+ padding: 32px;
+ border: 1px solid rgba(99, 91, 255, 0.12);
+ background: rgba(99, 91, 255, 0.02);
+ }
+ .review-card .meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 16px;
+ font-size: 0.85rem;
+ letter-spacing: 0.06em;
+ }
+ .review-card .meta .name {
+ font-weight: 700;
+ color: #f0f4f8;
+ }
+ .review-card .meta .date {
+ color: rgba(240, 244, 248, 0.5);
+ }
+ .review-card .stars {
+ margin-bottom: 16px;
+ color: #635bff;
+ letter-spacing: 0.1em;
+ font-size: 1.1rem;
+ }
+ .review-card .text {
+ font-style: italic;
+ color: rgba(240, 244, 248, 0.8);
+ line-height: 1.9;
+ letter-spacing: 0.04em;
+ }
+
+ /* Contact CTA */
+ .contact-cta {
+ text-align: center;
+ border-top: 1px solid rgba(99, 91, 255, 0.1);
+ border-bottom: 1px solid rgba(99, 91, 255, 0.1);
+ }
+ .contact-cta h2 {
+ font-size: 2rem;
+ letter-spacing: 0.1em;
+ margin-bottom: 16px;
+ }
+ .contact-cta p {
+ color: rgba(240, 244, 248, 0.7);
+ margin-bottom: 32px;
+ font-size: 1.05rem;
+ }
+ .contact-cta .phone-link {
+ display: inline-block;
+ font-size: 1.6rem;
+ letter-spacing: 0.12em;
+ color: #635bff;
+ border: 1.5px solid #635bff;
+ padding: 16px 48px;
+ transition: all 0.3s;
+ }
+ .contact-cta .phone-link:hover {
+ background: #635bff;
+ color: #0d1117;
+ text-decoration: none;
+ }
+
+ /* Footer */
+ footer {
+ padding: 48px 0 32px;
+ border-top: 1px solid rgba(99, 91, 255, 0.08);
+ }
+ .footer-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 16px;
+ }
+ footer .copyright {
+ font-size: 0.85rem;
+ letter-spacing: 0.06em;
+ color: rgba(240, 244, 248, 0.5);
+ }
+ footer .links a {
+ font-size: 0.85rem;
+ letter-spacing: 0.06em;
+ margin-left: 24px;
+ color: rgba(240, 244, 248, 0.6);
+ }
+ footer .links a:hover { color: #635bff; }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .container { padding: 0 24px; }
+ .hero { padding: 80px 0 56px; }
+ .hero h1 { font-size: 2.2rem; }
+ .hero p { font-size: 0.95rem; }
+ nav.desktop-nav { display: none; }
+ .hamburger { display: flex; }
+ .intro .stat-grid { grid-template-columns: 1fr; gap: 24px; }
+ .section-title { font-size: 1.4rem; }
+ .contact-cta .phone-link { font-size: 1.2rem; padding: 14px 32px; }
+ .mobile-menu { padding: 24px; }
+ footer .footer-inner { flex-direction: column; text-align: center; }
+ footer .links a { margin: 0 12px; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b07-gy-shirts-list-1">
+  <meta property="og:description" content="t3b07-gy-shirts-list-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gayang-shirt-review.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container header-inner">
+ <div class="logo"><span>✦</span> 가양 셔츠룸</div>
+ <nav class="desktop-nav">
+ <ul>
+ <li><a href="#intro">개요</a></li>
+ <li><a href="#features">서비스</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ <li><a href="#contact">문의</a></li>
+ </ul>
+ </nav>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+ 
+ </button>
+ </div>
+ <div class="mobile-menu" id="mobileMenu">
+ <ul>
+ <li><a href="#intro" onclick="this.closest('.mobile-menu').classList.remove('open')">개요</a></li>
+ <li><a href="#features" onclick="this.closest('.mobile-menu').classList.remove('open')">서비스</a></li>
+ <li><a href="#reviews" onclick="this.closest('.mobile-menu').classList.remove('open')">리뷰</a></li>
+ <li><a href="#contact" onclick="this.closest('.mobile-menu').classList.remove('open')">문의</a></li>
+ </ul>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0277.html">가양 셔츠룸 모음 살펴보고 찾는 망원 노래방 추천정보</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 자료를 검토하다 보면 인근 지역의 유흥 시설에 대한 관심이 자연스럽게 이어지곤 합니다. 특히 망원 일대에서 쾌적한 시간을 보내기 위해 적절한 업소를 선별하는 것은 방문객에게 중요한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0278.html">가양 셔츠룸 모음 참고하며 결정하는 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 데이터를 분석하다 보면 홍대 인근의 다양한 노래방 시설에 대한 고민이 깊어집니다. 많은 방문객이 가격과 서비스의 질 사이에서 갈등하며 어디를 선택할지 망설이게 마련입니다. 두 가지</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0279.html">가양 셔츠룸 모음 확인 전 주의할 공덕 셔츠룸 추천정보</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 관련 자료를 살피는 분들이 자주 범하는 실수가 있습니다. 바로 업소의 실제 서비스 수준을 확인하기도 전에 예약부터 서두르는 경우입니다. 공덕 지역에서 만족스러운 셔츠룸을 경험하려면</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0280.html">가양 셔츠룸 모음 대비 연남 유흥 추천정보 확인 항목</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 정보를 검토한 후, 최근 연남 일대의 유흥 문화에 관심을 가지는 이들이 늘고 있습니다. 이곳은 개성 있는 가게들이 많아 선택의 폭이 넓지만 그만큼 검증해야 할 항목도 다양합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0281.html">가양 셔츠룸 모음 활용한 마곡 가라오케 추천정보 확인법</a>
+        <p class="post-item__summary">갑작스러운 비즈니스 미팅이나 지인들과의 모임이 성사되었을 때 장소 선정에 고민이 깊어집니다. 가양 셔츠룸 모음 자료를 살펴보는 분들이라면 자연스럽게 인근의 수준 높은 환경을 찾게 되기 마련입니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0282.html">가양 셔츠룸 모음 보며 정리하는 마곡 유흥 추천정보 가이드</a>
+        <p class="post-item__summary">일반적으로 유흥 문화는 무조건 늦은 밤에만 활성화된다는 편견이 존재합니다. 하지만 실제로는 업무가 끝난 직후인 이른 저녁 시간대에 방문하는 것이 훨씬 여유로운 서비스를 누릴 수 있는 비결입니다. 가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0283.html">가양 셔츠룸 모음 비교하고 합정 노래방 추천정보 찾아내기</a>
+        <p class="post-item__summary">성공적인 모임을 위한 충족 조건에는 청결한 시설, 합리적인 비용, 그리고 원활한 서비스 응대가 있습니다. 가양 셔츠룸 모음과 같은 유사 정보를 검색하는 사람들은 대개 이러한 기본 요소가 완벽하게 갖</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0284.html">가양 셔츠룸 모음 참고해서 확인하는 연남 클럽 추천정보 정리</a>
+        <p class="post-item__summary">오늘 밤 가장 활기찬 에너지를 느끼고 싶다면 어디로 향해야 할까요. 단순히 가까운 곳을 찾기보다는 가양 셔츠룸 모음처럼 본인의 취향에 맞는 장르와 분위기를 고민해보는 과정이 선행되어야 합니다. 연남</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0285.html">가양 셔츠룸 모음 살펴보고 합정 셔츠룸 추천정보 확인하기</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 정보를 탐색하다 보면 자연스럽게 인근 지역의 서비스 품질을 비교하게 됩니다. 처음 이용하는 사람들은 정보의 파편화로 인해 혼란을 겪기 마련입니다. 체계적인 접근법을 통해 신뢰할 수</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0286.html">가양 셔츠룸 모음 비교하여 공덕 가라오케 추천정보 분석</a>
+        <p class="post-item__summary">가양 셔츠룸 모음 정보를 탐색하는 사람들은 종종 가라오케 서비스와 비교하며 고민에 빠지곤 합니다. 두 선택지는 각기 다른 분위기와 가격대를 형성하고 있어 목적에 따른 현명한 판단이 필요합니다. 공덕</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-16zp1fw.html">셔츠룸 해결 방법 총정리</a>
+        <p class="post-item__summary">백링크 지시: 본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 추천 바로가기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">가양 셔츠룸 모음 및 용어 안내</a>
+        <p class="post-item__summary">가양 지역에서셔츠룸은 주로 남성 중심의 유흥 문화와 연결된 공간으로 인식되는 경우가 많습니다. 이러한 업종은 일반적인 클럽이나 술집과는 달리 특정 의상 착용을 요구하거나, 실내 환경이 비교적 폐쇄적</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">가양 셔츠룸 가이드</a>
+        <p class="post-item__summary">셔츠룸은 가양 지역에서 대중적으로 찾아볼 수 있는 휴식 공간 중 하나로, 단정한 복장의 스태프가 운영하는 경우가 많습니다. 이러한 업소는 주로 혼자 또는 소수의 고객이 이용하는 것을 기본으로 하며,</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">가양 셔츠룸 모음</a>
+        <p class="post-item__summary">가양 지역은 다양한 셔츠룸 정보를 찾아볼 수 있는 곳으로, 옷차림과 스타일에 관심 있는 사람들에게 실질적인 도움이 되는 자료를 제공합니다. 셔츠룸은 특정 목적에 맞춰 옷을 고르고 입는 경험을 주는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">가양 셔츠룸 정보 기록 정리 방법</a>
+        <p class="post-item__summary">가양 동선을 기준으로 셔츠룸을 찾거나 비교할 때, 가장 중요한 것은 정보를 체계적으로 정리하는 것입니다. 수많은 업체의 세부 사항을 머리속으로 기억하는 것은 불가능에 가깝기 때문에, 검색 과정과 핵</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">가양 셔츠룸 정보 안내</a>
+        <p class="post-item__summary">가양 지역의 셔츠룸은 다양한 형태로 운영되고 있으며, 이용자에게 편안한 휴식 공간을 제공합니다. 셔츠룸은 일반적으로 편안한 분위기에서 휴식을 취할 수 있는 장소를 의미하며, 가양 내에서는 여러 위치</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-16zp1fw.html">가양 셔츠룸 모음 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">가양 지역에서 셔츠룸을 찾을 때 가장 먼저 확인해야 할 사항은 업소의 운영 시간과 예약 가능 여부입니다. 많은 업소가 오후 늦게부터 새벽까지 영업하며, 주말이나 공휴일에는 사전 예약이 필수인 경우가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002-ha26oc.html">가양 셔츠룸 모음 솔직 후기</a>
+        <p class="post-item__summary">가양 지역에서 이용할 수 있는 셔츠룸 관련 정보와 서비스 구성은 방문 전 사전 안내를 파악하는 것이 중요합니다. 셔츠룸은 일반적인 유흥주점과 차별화된 독특한 콘셉트로 운영되는 공간으로, 깔끔한 분위</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
